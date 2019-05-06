@@ -1,0 +1,15 @@
+<h1>COUNT</h1>
+
+<a href="{% url 'home' %}">Home</a>
+<h2> The original text has {{ count }} words </h2>
+<h2>The text is "{{fulltext}}".</h2>
+
+
+<h1>The no.of occurrence of each word in the given text is </h1>
+
+
+{% for word,count in word_counter %}
+{{ word }} - {{ count }}
+<br/>
+{% endfor %}
+
