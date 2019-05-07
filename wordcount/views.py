@@ -26,3 +26,11 @@ def datecalc(request):
     value_dict = {'currentDate': str(today), 'enteredDate': str(given_date), 'calculatedDate': calc_date}
     return render(request, "calculate.html", value_dict)
 
+
+def agecalculator(request):
+    return render(request, 'agecalculator.html')
+
+
+def wordcounter(request):
+    return render(request, 'wordcounter.html')
+

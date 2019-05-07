@@ -1,19 +1,14 @@
-<h1>Word Count</h1>
-<p align="center">
-<a href="{% url 'about' %}">About</a>
-</p>
-<form action="{% url 'count' %}">
-    <textarea cols="40" rows="10" name="fulltext"></textarea>
-    <br/>
-    <input type="submit" value="count" />
-    <br/>
-    <br/>
-</form>
 
-<h1>Age calculator</h1>
-<form action="{% url 'calculate' %}">
-    <h2>Select date of birth</h2>
-    <input type="date" id="start" name="date" value="1900-01-01" min="1900-01-01" max="2020-01-01">
-    <input type="submit" value="calculate">
-</form>
+<h1>Choose the option from below</h1>
+
+<p align="center display: inline-block">
+<a href="{% url 'about' %}" style="font-size: 25px; text-decoration: none">About</a>
+</p>
+
+<br/>
+<a href="{% url 'wordcounter' %}" style="font-size: 25px; text-decoration: none">Word counter</a>
+<br/>
+<a href="{% url 'agecalculator' %}" style="font-size: 25px; text-decoration: none">Age calculator</a>
+
+
 

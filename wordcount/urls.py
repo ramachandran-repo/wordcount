@@ -23,4 +23,7 @@ urlpatterns = [
     path('countthewords/', views.count, name='count'),
     path('about/', views.about, name='about'),
     path('calculate/', views.datecalc, name='calculate'),
+    path('wordcounter/',views.wordcounter, name='wordcounter'),
+    path('agecalculator/',views.agecalculator, name='agecalculator'),
+
 ]
