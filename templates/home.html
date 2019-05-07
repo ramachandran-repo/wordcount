@@ -6,4 +6,13 @@
     <textarea cols="40" rows="10" name="fulltext"></textarea>
     <br/>
     <input type="submit" value="count" />
+    <br/>
+    <br/>
 </form>
+
+<form action="{% url 'calculate' %}">
+    <h2>Select a date</h2>
+    <input type="date" id="start" name="date" value="1900-01-01" min="1900-01-01" max="2020-01-01">
+    <input type="submit" value="calculate">
+</form>
+

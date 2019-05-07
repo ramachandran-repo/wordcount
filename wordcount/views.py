@@ -17,3 +17,12 @@ def count(request):
 def about(request):
     return render(request, "about.html")
 
+
+def dateCalc(request):
+    date = request.GET['date']
+    dates = date.split("-")
+    year = 2019-int(dates[0])
+    month = 5-int(dates[1])
+    datevalue = 11 - int(dates[2])
+    return render(request, "calculate.html", {'date': date,'year':year,'month':month,'dateValue':datevalue})
+
