@@ -1,8 +1,13 @@
+<a href="{% url 'home' %}">Home</a>
+
 <h1>The date you have entered is </h1>
 
-{{date}}
+{{enteredDate}}
 
+<h1>Current date is</h1>
 
-<h2>date from the entered date to current date is: </h2>
+{{currentDate}}
 
-{{year}} years and {{month}} months and {{dateValue}} days
+<h2>Total umber of days between the two dates is: </h2>
+
+{{calculatedDate.years}} years and {{calculatedDate.months}} months and {{calculatedDate.days}} days

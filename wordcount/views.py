@@ -1,6 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-
+from datetime import datetime
+from dateutil import relativedelta
 
 def home(request):
     return render(request, 'home.html', {"dict_key": "dict_value"})
@@ -18,11 +18,11 @@ def about(request):
     return render(request, "about.html")
 
 
-def dateCalc(request):
-    date = request.GET['date']
-    dates = date.split("-")
-    year = 2019-int(dates[0])
-    month = 5-int(dates[1])
-    datevalue = 11 - int(dates[2])
-    return render(request, "calculate.html", {'date': date,'year':year,'month':month,'dateValue':datevalue})
+def datecalc(request):
+    date_text = request.GET['date']
+    today = datetime.now().date()
+    given_date = datetime.strptime(date_text, '%Y-%m-%d').date()
+    calc_date = relativedelta.relativedelta(today, given_date)
+    value_dict = {'currentDate': str(today), 'enteredDate': str(given_date), 'calculatedDate': calc_date}
+    return render(request, "calculate.html", value_dict)
 
