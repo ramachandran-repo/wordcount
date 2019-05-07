@@ -10,7 +10,8 @@ def count(request):
     fulltext = request.GET['fulltext']
     word_list = fulltext.split()
     word_counter = {word: word_list.count(word) for word in word_list}
-    return render(request, 'count.html', {'fulltext': fulltext, 'count': len(word_list), 'word_count': word_counter})
+    params = {'fulltext': fulltext, 'count': len(word_list), 'word_count': word_counter, 'numberOfChars': len(fulltext)}
+    return render(request, 'count.html', params)
 
 
 def about(request):
